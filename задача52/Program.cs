@@ -1,4 +1,4 @@
-﻿// 
+﻿// Программа задает массив и выводит среднее арифметическое по столбцам с точностью до десятых
 int[, ] array = new int[3, 4];
 for (int i = 0; i < array.GetLength(0); i++)
 {
@@ -10,7 +10,7 @@ for (int i = 0; i < array.GetLength(0); i++)
     Console.WriteLine();
 }
 
-void SA (int[, ] array)
+void Average (int[, ] array)
 {
     double Sum1 = 0;
     double Sum2 = 0;
@@ -40,6 +40,10 @@ for (int i = 0; i < array.GetLength(0); i++)
     }
     
 }
-Console.WriteLine($"{Sum1 / 3}, {Sum2 / 3}, {Sum3 / 3}, {Sum4 / 3}");
+string result1 = string.Format("{0:f1}", Sum1 / 3);
+string result2 = string.Format("{0:f1}", Sum2 / 3);
+string result3 = string.Format("{0:f1}", Sum3 / 3);
+string result4 = string.Format("{0:f1}", Sum4 / 3);
+Console.WriteLine( result1 + " " + result2 + " " + result3 + " " + result4);
 }
-SA(array);
+Average(array);
